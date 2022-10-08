@@ -1,0 +1,48 @@
+group 'com.example.image_picker'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}
+
+dependencies {
+    implementation 'com.github.bumptech.glide:glide:4.14.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.0'
+    // PictureSelector basic (Necessary)
+    implementation 'io.github.lucksiege:pictureselector:v3.10.6'
+
+    // image compress library (Not necessary)
+    implementation 'io.github.lucksiege:compress:v3.10.6'
+
+    // uCrop library (Not necessary)
+    implementation 'io.github.lucksiege:ucrop:v3.10.6'
+}
